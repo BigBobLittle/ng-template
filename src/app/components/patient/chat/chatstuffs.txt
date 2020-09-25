@@ -1,0 +1,92 @@
+  
+   this.peer = new Peer({host: '/', port: 3000, path: '/peerjs'});
+
+   setTimeout(() => {
+          this.connectedId = this.peer.id
+          console.log('my id is ...'+ this.connectedId);
+       }, 2000);
+  
+//listen to connections and initiate socket
+this.peer.on('connection', function(conn) {
+   conn.on('data', function(data){
+     // Will print 'hi!'
+     console.log(data);
+   });
+ }); 
+
+
+
+
+//recieve video call/when a user accept a call
+let n = <any>navigator;
+   let video = this.myVideo.nativeElement;
+ //  
+var getUserMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia;
+this.peer.on('call', function(call) {
+  getUserMedia({video: true, audio: true}, function(stream) {
+    call.answer(stream); // Answer the call with an A/V stream.
+    call.on('stream', function(remoteStream) {
+      // Show stream in some video/canvas element.
+      this.videoElement = true;
+      video.src = URL.createObjectURL(remoteStream);
+      video.play();
+    });
+  }, function(err) {
+    console.log('Failed to get local stream' ,err);
+  });
+});
+
+
+
+
+     //chat stuffs
+   //   this.peer.id = chat.from;
+   //   var conn = this.peer.connect('Bobby Sullivan');
+
+   //   conn.on('open', function() {
+   //    // Receive messages
+   //    conn.on('data', function(data) {
+   //      console.log('Received', data);
+   //    });
+    
+   //    // Send messages
+   //    conn.send('Hello!');
+   //  });
+   //   console.log('check if peer id is working' + this.peer.id);
+     
+
+      connect(){
+   var conn = this.peer.connect(this.newMessage);
+
+   conn.on('open', function() {
+    // Receive messages
+    conn.on('data', function(data) {
+      console.log('Received', data);
+    });
+  
+    // Send messages
+    conn.send('Hello!');
+  // console.log(this.newMessage);
+   
+  });
+  }
+
+
+  
+  videoCall(){ //inititate video call
+   let n = <any>navigator;
+   let video = this.myVideo.nativeElement;
+  
+    var getUserMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia;
+    getUserMedia({video: true, audio: true}, function(stream) {
+      var call = this.peer.call(this.newMessage, stream);  //this.newmessage is the peer id to call
+      call.on('stream', function(remoteStream) {
+        // Show stream in some video/canvas element.
+        this.videoElement = true;
+        video.src = URL.createObjectURL(remoteStream);
+        video.play();
+      });
+    }, function(err) {
+      console.log('Failed to get local stream' ,err);
+    });
+ }

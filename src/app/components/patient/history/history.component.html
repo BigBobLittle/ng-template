@@ -1,0 +1,69 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch">
+    <div fxFlex.gt-sm="66.66" fxFlex.gt-md="66.66%" fxFlex="100">
+      <mat-card class="card-full-height card-full-width">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Project Status'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content-sm gene-img-table">
+          <ngx-datatable class="material box-shadow-none full-wid" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="0" [rowHeight]="'auto'">
+            <ngx-datatable-column name="Project">
+              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template> {{row['project']}} </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Progress">
+              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                <mat-progress-bar mode="determinate" value="{{row['progress']}}" color="{{row['color']}}"></mat-progress-bar> <span class="meta-post">{{row['name']}}</span> </ng-template>
+            </ngx-datatable-column><span fxFlex></span>
+            <ngx-datatable-column name="Team">
+              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                       <img class="thumb-gap" src="{{row['team-member1']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member2']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member3']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member4']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member5']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member6']}}" width="30px" height="30px">
+                    </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-md="33.33%" fxFlex="100">
+      <mat-card class="card-full-height card-full-width">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Team Member'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <mat-list class="gene-team-list">
+            <ng-template let-item let-last="last" ngFor [ngForOf]="team">
+              <mat-list-item class="pad-none"> <img mat-list-avatar src="{{item.photo}}" alt="">
+                <h3 mat-line> {{item.name}} </h3>
+                <p mat-line class="meta-post"> {{item.post}}</p>
+              </mat-list-item>
+            </ng-template>
+          </mat-list>
+        </div>
+      </mat-card>
+    </div>
+  </div>

@@ -1,0 +1,53 @@
+<form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+	<div>
+		<h2 mat-dialog-title>Edit Notification</h2>
+	</div>	
+	<div>
+		
+		<mat-dialog-content>
+				
+
+
+			<mat-form-field class="full-wid">
+				<label>Body</label>
+				<input matInput  formControlName="body" type="text">
+			</mat-form-field> 
+
+			<mat-form-field class="full-wid">
+				<label>To</label>
+				<input matInput formControlName="to" type="text">
+			</mat-form-field> 
+
+			<mat-form-field class="full-wid">
+				<label>Type</label>
+				
+					 <select matNativeControl formControlName="type">
+						<option value="Emergency">Emergency</option>
+						<option value="NotEmergency">NotEmergency</option>
+					
+					</select>	 
+			</mat-form-field> 
+
+			<mat-form-field class="full-wid">
+        <label>CreatedAt</label>
+        <input matInput formControlName="createdAt" type="text">
+					<!-- <select matNativeControl formControlName="accountType">
+						<option value="Platinum">Platinum</option>
+						<option value="Gold">Gold</option>
+						<option value="Silver">Silver</option>
+					</select>	 -->
+			</mat-form-field> 
+
+			<mat-form-field class="full-wid" [hidden]="hideId" >
+					<!-- <label>Id</label>  -->
+					<input matInput  formControlName="_id" type="text" [hidden]="hideId">
+			</mat-form-field> 
+		</mat-dialog-content>
+	</div>	
+	<div>
+		<mat-dialog-actions align="right">
+			<button mat-raised-button type="button" (click)="dialogRef.close()" color="primary">CANCEL</button>
+			<button mat-raised-button type="submit" color="warn">UPDATE</button>
+		</mat-dialog-actions>
+	</div>	
+</form>

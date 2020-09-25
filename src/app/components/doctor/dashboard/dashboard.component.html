@@ -1,0 +1,679 @@
+
+
+
+<div class="gene-welcome-note pad-wrap">
+    <h2>Hi {{currentUser.phone}}, Welcome back</h2>
+    <p>Explore your own powerful admin panel and keep track of all activity</p>
+  </div>
+  <!-- <div fxLayout="row wrap" fxLayoutAlign="start stretch" class="dash-card">
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100" tourAnchor="tour-ui">
+      <mat-card class="primary-bg">
+        <div mat-card-widget>
+          <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+                 <mat-icon>remove_red_eye</mat-icon>
+              </button>
+          <div class="inline-block vertical-align-mid pad-wrap">
+            <h5 mat-card-widget-title class="mrgn-b-none">Today Views</h5>
+            <h5>22,520</h5>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-card class="warn-bg">
+        <div mat-card-widget>
+          <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+                 <mat-icon>attach_money</mat-icon>
+              </button>
+          <div class="inline-block vertical-align-mid pad-wrap">
+            <h5 mat-card-widget-title class="mrgn-b-none">Revenue</h5>
+            <h5>1,425</h5>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-card class="accent-bg">
+        <div mat-card-widget>
+          <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+                 <mat-icon>assessment</mat-icon>
+              </button>
+          <div class="inline-block vertical-align-mid pad-wrap">
+            <h5 mat-card-widget-title class="mrgn-b-none">Item Sales</h5>
+            <h5>6,101</h5>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-card class="success-bg">
+        <div mat-card-widget>
+          <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+                 <mat-icon>new_releases</mat-icon>
+              </button>
+          <div class="inline-block vertical-align-mid pad-wrap">
+            <h5 mat-card-widget-title class="mrgn-b-none">New Orders</h5>
+            <h5>5,218</h5>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  <div fxLayout="row wrap" fxLayoutAlign="start">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+      <mat-card>
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Sample Full Width Graph'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                     <mat-icon>sync</mat-icon>
+                  </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                     <mat-icon>more_horiz</mat-icon>
+                  </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <canvas baseChart width="900" height="300" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+<!-- 
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch">
+    <div fxFlex.gt-sm="33.33%" fxFlex="100">
+      <mat-card class="card-full-height">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'To Do Lists'}}</h4>
+            </div>
+            <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <div class="todos">
+                 <perfect-scrollbar class="todolist-scroll">
+               <ul class="gene-list">
+                       <li *ngFor="let todo of todos">
+                          <mat-checkbox class="checkbox mrgn-r-sm" [(ngModel)]="todo.completed"></mat-checkbox>
+                          <span [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</span> 
+                       </li>
+                    </ul>
+                 </perfect-scrollbar>
+            <div>
+              <div class="list-insert-bar" fxFlex>
+                <form class="to-do-form" (submit)="addTodo($event)" fxShow="false" fxShow.gt-xs>
+                  <mat-form-field class="full-width">
+                             <input matInput type="text" placeholder="Add new item" [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" class="textfield" name="newTodo" />
+                          </mat-form-field>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="66.66%" fxFlex="100">
+      <mat-card class="card-full-height live-chat-card">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Live Chat Support'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <div fxLayout="row" fxLayoutAlign="start start" class=" chat-list pad-y-md">
+            <div class="chat-thumbnail" fxFlex.gt-md="65px" fxFlex.gt-xs="70px" fxFlex="70px" >
+                    <img class="img-responsive img-circle" src="assets/img/register-user-3.jpg" alt="User Image" width="64" height="64">
+                 </div>
+            <div class="pad-wrap chat-content" fxFlex.gt-md="calc(80% - 75px)" fxFlex.gt-xs="80" fxFlex.sm="100">
+                    <div fxLayout="row wrap" class="title-wrap">
+                       <span class="chat-text font-bold inline-block">Devy Finn</span>
+                       <h5 class="meta-post mrgn-b-none inline-block">10 Min ago</h5>
+                    </div>
+              <div class="gene-chat-content">
+                <p class="mrgn-b-none gene-msg-block">Hi There! Recently I updated the latest version of your app, it crashed every time when i open.Please help me out as soon as possible.....Thanks</p>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start start" class="receiver chat-list pad-y-md">
+            <div class="chat-thumbnail" fxFlex.gt-md="65px" fxFlex.gt-xs="70px" fxFlex="70px" >
+                    <img class="img-responsive img-circle" src="assets/img/register-user-1.jpg" alt="User Image" width="64" height="64">
+                 </div>
+            <div class="pad-wrap chat-content" fxFlex.gt-md="calc(80% - 75px)" fxFlex.gt-xs="80" fxFlex.sm="100">
+                    <div fxLayout="row wrap" class="title-wrap">
+                       <span class="chat-text font-bold inline-block">Sam Brown</span>
+                       <h5 class="meta-post mrgn-b-none inline-block">8 Min ago</h5>
+                    </div>
+              <div class="gene-chat-content">
+                <p class="mrgn-b-none gene-msg-block">Hi Devy, Can you please tell us your mobile configuraion.So that We can help you better.Please Also specify Version of your phone....Thank You!</p>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start start" class="chat-list pad-y-md">
+            <div class="chat-thumbnail" fxFlex.gt-md="65px" fxFlex.gt-xs="70px" fxFlex="70px" >
+                    <img class="img-responsive img-circle" src="assets/img/register-user-3.jpg" alt="User Image" width="64" height="64">
+                 </div>
+            <div class="pad-wrap chat-content" fxFlex.gt-md="calc(80% - 75px)" fxFlex.gt-xs="80" fxFlex.sm="100">
+                    <div fxLayout="row wrap" class="title-wrap">
+                       <span class="chat-text font-bold inline-block">Devy Finn</span>
+                       <h5 class="meta-post mrgn-b-none inline-block">7 Min ago</h5>
+                    </div>
+              <div class="gene-chat-content">
+                <p class="mrgn-b-none gene-msg-block">Thanks you for quick response. I using iPhone 6s and the version of this is 10.2 . Please fix this issue I need this right now....Thanks</p>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start start" class="receiver chat-list pad-y-md">
+            <div class="chat-thumbnail" fxFlex.gt-md="65px" fxFlex.gt-xs="70px" fxFlex="70px" >
+                    <img class="img-responsive img-circle" src="assets/img/register-user-1.jpg" alt="User Image" width="64" height="64">
+                 </div>
+            <div class="pad-wrap chat-content" fxFlex.gt-md="calc(80% - 75px)" fxFlex.gt-xs="80" fxFlex.sm="100">
+                    <div fxLayout="row wrap" class="title-wrap">
+                       <span class="chat-text font-bold inline-block">Sam Brown</span>
+                       <h5 class="meta-post mrgn-b-none inline-block">6 Min ago</h5>
+                    </div>
+              <div class="gene-chat-content">
+                <p class="mrgn-b-none gene-msg-block">Please wait for some time. Our tecnical support team will contact you soon and fix the issue .Thanks for using our App.We will Assit You better</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch">
+    <div fxFlex.gt-sm="66.66" fxFlex.gt-md="66.66%" fxFlex="100">
+      <mat-card class="card-full-height card-full-width">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Project Status'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content-sm gene-img-table">
+          <ngx-datatable class="material box-shadow-none full-wid" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="0" [rowHeight]="'auto'">
+            <ngx-datatable-column name="Project">
+              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template> {{row['project']}} </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Progress">
+              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                <mat-progress-bar mode="determinate" value="{{row['progress']}}" color="{{row['color']}}"></mat-progress-bar> <span class="meta-post">{{row['name']}}</span> </ng-template>
+            </ngx-datatable-column><span fxFlex></span>
+            <ngx-datatable-column name="Team">
+              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                       <img class="thumb-gap" src="{{row['team-member1']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member2']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member3']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member4']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member5']}}" width="30px" height="30px">
+                       <img class="thumb-gap" src="{{row['team-member6']}}" width="30px" height="30px">
+                    </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-md="33.33%" fxFlex="100">
+      <mat-card class="card-full-height card-full-width">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Team Member'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <mat-list class="gene-team-list">
+            <ng-template let-item let-last="last" ngFor [ngForOf]="team">
+              <mat-list-item class="pad-none"> <img mat-list-avatar src="{{item.photo}}" alt="">
+                <h3 mat-line> {{item.name}} </h3>
+                <p mat-line class="meta-post"> {{item.post}}</p>
+              </mat-list-item>
+            </ng-template>
+          </mat-list>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+
+<!-- 
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch">
+    <div fxFlex.gt-sm="50" fxFlex="100">
+      <mat-card class="accent-bg card-full-height">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4 class="text-inverse">{{'Yearly Sales'}}<span class="inline-block mrgn-l-sm">+2.99%</span></h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                 <mat-icon class="text-inverse">more_horiz</mat-icon>
+              </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <canvas width="300" height="200" baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barStackChartOptions" [colors]="barChartColors" [legend]="barChartLegend" [chartType]="barChartType"> </canvas>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="50" fxFlex="100">
+      <mat-card class="card-full-height">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Sales Report'}}<span class="inline-block mrgn-l-sm text-alert">+458.99</span></h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <canvas height="200" baseChart [datasets]="bubbleChartData" [labels]="lineChartLabels" [options]="bubbleChartOptions" [colors]="bubbleChartColors" [legend]="lineChartLegend" [chartType]="bubbleChartType"></canvas>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+
+<!-- 
+  <div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+      <mat-card>
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Global Locations'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <div fxLayout="row">
+            <div fxFlex.gt-sm="100" fxFlex="100">
+              <agm-map [latitude]="lat" [longitude]="lng" [zoom]="9" [scrollwheel]="false" [styles]="customStyle">
+                <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="'assets/img/marker-icon.png'"></agm-marker>
+              </agm-map>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+<!-- 
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch">
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="card-full-height email-stats">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Email Statistics'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content center-gene-card-content">
+          <canvas baseChart height="245" [data]="doughnutChartData" [labels]="doughnutChartLabels" [options]="doughnutChartOptions" [colors]="doughnutChartColors" [chartType]="doughnutChartType"></canvas>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="card-full-height">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Traffic Sources'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Direct</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-alert">arrow_drop_up</mat-icon><span class="gene-span mrgn-l-xs">30%</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="30" class="gene-progess-md" color="primary"></mat-progress-bar>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Referral</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-danger">arrow_drop_down</mat-icon><span class="gene-span mrgn-l-xs">20%</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="20" class="gene-progess-md" color="warn"></mat-progress-bar>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Social</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-alert">arrow_drop_up</mat-icon><span class="gene-span mrgn-l-xs">60</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="60" class="gene-progess-md" color="accent"></mat-progress-bar>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Internet</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-alert">arrow_drop_up</mat-icon><span class="gene-span mrgn-l-xs">70%</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="70" class="gene-progess-md accent-bg" color="primary"></mat-progress-bar>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Ads</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-alert">arrow_drop_up</mat-icon><span class="gene-span mrgn-l-xs">85%</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="85" class="gene-progess-md primary-bg" color="warn"></mat-progress-bar>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="notification-wrap card-full-height">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Notifications'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content text-inverse-all">
+          <mat-list class="gene-theme-list mrgn-b-lg">
+            <mat-list-item class="warn-bg">
+              <div> Site goes is down for 6 hours due to maintainance and bug fixing.Please Check </div>
+            </mat-list-item>
+            <mat-list-item class="success-bg">
+              <div> New users from March is promoted as special benefit under promotional offer of 30%. </div>
+            </mat-list-item>
+            <mat-list-item class="primary-bg">
+              <div> Bug detected from the development team at the cart module of Fashion store. </div>
+            </mat-list-item>
+          </mat-list>
+          <div class="text-center mrgn-b-md"> <button class="mrgn-all-xs meta-post" mat-button>View All Notfications</button></div>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+<!-- 
+  
+  <div fxLayout="row wrap">
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="primary-bg">
+        <div mat-card-widget fxLayout="row" fxLayoutAlign="start center">
+          <div><span class="sq-50 inline-block"><i class="fa fa-facebook mrgn-r-none"></i></span> <span class="lead lead inline-block mrgn-l-sm">FACEBOOK</span></div><span fxFlex></span>
+          <div><span class="lead">41</span> </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="accent-bg">
+        <div mat-card-widget fxLayout="row" fxLayoutAlign="start center">
+          <div><span class="sq-50 inline-block"><i class="fa fa-twitter mrgn-r-none"></i></span> <span class="lead lead inline-block mrgn-l-sm">TWITTER</span></div><span fxFlex></span>
+          <div><span class="lead">87</span> </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="warn-bg">
+        <div mat-card-widget fxLayout="row" fxLayoutAlign="start center">
+          <div><span class="sq-50 inline-block"><i class="fa fa-google-plus mrgn-r-none"></i></span> <span class="lead lead inline-block mrgn-l-sm">GOOGLE PLUS</span></div><span fxFlex></span>
+          <div><span class="lead">17</span> </div>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+
+  <!-- <div fxLayout="row wrap" fxLayoutAlign="start stretch">
+    <div fxFlex.gt-sm="33.33" fxFlex="100" *ngFor=" let list of list">
+      <mat-card class="pad-t-none card-full-height">
+        <div class="gene-thumb no-gutter"><img src="{{list.photo}}"></div>
+        <div class="gene-card-content">
+          <h3>{{list.title}}</h3>
+          <p>{{list.desc}}</p> <span class="meta-post">By: {{list.author}}, {{list.postdate}}</span> </div>
+        <div class="gene-card-footer">
+          <mat-divider></mat-divider>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div>
+              <button mat-icon-button>
+                       <mat-icon>share</mat-icon>
+                    </button>
+              <button mat-icon-button [matMenuTriggerFor]="options">
+                       <mat-icon>favorite</mat-icon>
+                    </button>
+            </div> <span fxFlex></span>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+
+  <mat-menu #options="matMenu" x-position="before">
+    <!-- <button mat-menu-item>
+        <mat-icon>settings</mat-icon> Settings </button>
+    <button mat-menu-item>
+        <mat-icon>more</mat-icon> View More </button> -->
+    <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon> Disable notifications </button>
+    <!-- <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon> Remove Panel </button> -->
+  </mat-menu>
+  
+
+
+
+  <!-- the tabel starts here -->
+  <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+       <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+             <div fxLayout="column">
+                <h4>{{'Table Responsive'}}</h4>
+             </div> <span fxFlex></span>
+ 
+          </div>
+          <mat-divider></mat-divider>
+       </div>
+       <div class="gene-card-content pad-t-none">
+          <div class="table-responsive">
+             <table class="table table-hover table-middle th-fw-light mb-0">
+                <thead>
+                   <tr>
+                      <th>User Thumb</th>
+                      <th>Name</th>
+                      <th>Status</th>
+                      <th>User-Name</th>
+                      <th>User-ID</th>
+                      <th>Date Joined</th>
+ 
+                      <th>Ratings</th>
+                      <th>Actions</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td><img src="assets/img/user-1.jpg" width="50" height="50" class="img-fluid img-circle" alt="User Image"></td>
+                      <td>Alberto Decosta</td>
+                      <td><span class="badge badge-success rounded">Schedules</span> </td>
+                      <td>User Name</td>
+                      <td>012 345 6978</td>
+                      <td>Oct 16, 2016</td>
+ 
+                      <td><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
+                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></td>
+                      <td><a href="javascript:;"><i class="fa fa-edit mr-1"></i></a><a href="javascript:;"><i class="fa fa-times text-danger"></i></a></td>
+                   </tr>
+                   <tr>
+                      <td><img src="assets/img/user-2.jpg" width="50" height="50" class="img-fluid img-circle" alt="User Image"></td>
+                      <td>Jainne Frost</td>
+                      <td><span class="badge badge-danger rounded">Free</span> </td>
+                      <td>User Name</td>
+                      <td>012 345 6978</td>
+                      <td>Oct 12, 2016</td>
+ 
+                      <td><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
+                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></td>
+                      <td><a href="javascript:;"><i class="fa fa-edit mr-1"></i></a><a href="javascript:;"><i class="fa fa-times text-danger"></i></a></td>
+                   </tr>
+                   <tr>
+                      <td><img src="assets/img/user-3.jpg" width="50" height="50" class="img-fluid img-circle" alt="User Image"></td>
+                      <td>Vic Phill</td>
+                      <td><span class="badge badge-success rounded">Schedules</span> </td>
+                      <td>User Name</td>
+                      <td>012 345 6978</td>
+                      <td>May 18, 2016</td>
+ 
+                      <td><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
+                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></td>
+                      <td><i class="fa fa-edit mr-1"></i><i class="fa fa-times text-danger"></i></td>
+                   </tr>
+                   <tr>
+                      <td><img src="assets/img/user-4.jpg" width="50" height="50" class="img-fluid img-circle" alt="User Image"></td>
+                      <td>Venna Mercy</td>
+                      <td><span class="badge badge-success rounded">Schedules</span> </td>
+                      <td>User Name</td>
+                      <td>012 345 6978</td>
+                      <td>Apr 28, 2016</td>
+ 
+                      <td><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
+                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></td>
+                      <td><a href="javascript:;"><i class="fa fa-edit mr-1"></i></a><a href="javascript:;"><i class="fa fa-times text-danger"></i></a></td>
+                   </tr>
+                   <tr>
+                      <td><img src="assets/img/user-5.jpg" width="50" height="50" class="img-fluid img-circle" alt="User Image"></td>
+                      <td>Rose Golddust</td>
+                      <td><span class="badge badge-danger rounded">Free</span> </td>
+                      <td>User Name</td>
+                      <td>012 345 6978</td>
+                      <td> Oct 16, 2016</td>
+ 
+                      <td><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
+                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></td>
+                      <td><a href="javascript:;"><i class="fa fa-edit mr-1"></i></a><a href="javascript:;"><i class="fa fa-times text-danger"></i></a></td>
+                   </tr>
+                   <tr>
+                      <td><img src="assets/img/user-6.jpg" width="50" height="50" class="img-fluid img-circle" alt="User Image"></td>
+                      <td>Dusty Raims</td>
+                      <td><span class="badge badge-success rounded">Schedules</span> </td>
+                      <td>User Name</td>
+                      <td>012 345 6978</td>
+                      <td>Oct 12, 2016</td>
+ 
+                      <td><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
+                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></td>
+                      <td><a href="javascript:;"><i class="fa fa-edit mr-1"></i></a><a href="javascript:;"><i class="fa fa-times text-danger"></i></a></td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </mat-card>
+ </div>
+

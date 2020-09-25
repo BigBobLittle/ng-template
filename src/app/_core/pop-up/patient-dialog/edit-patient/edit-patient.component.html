@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+	<div>
+		<h2 mat-dialog-title>Edit User</h2>
+	</div>	
+	<div>
+		<mat-dialog-content>
+			<mat-form-field class="full-wid">
+				<label>Phonenumber</label>
+				<input matInput  formControlName="phonenumber" type="text">
+			</mat-form-field> 
+
+			<mat-form-field class="full-wid">
+				<label>Role</label>
+				<input matInput formControlName="role" type="text">
+			</mat-form-field> 
+
+			<mat-form-field class="full-wid">
+				<label>Email</label>
+				<input matInput formControlName="email" type="text">
+			</mat-form-field> 
+
+			<mat-form-field class="full-wid">
+        <label>CreatedAt</label>
+        <input matInput formControlName="createdAt" type="text">
+					<!-- <select matNativeControl formControlName="accountType">
+						<option value="Platinum">Platinum</option>
+						<option value="Gold">Gold</option>
+						<option value="Silver">Silver</option>
+					</select>	 -->
+			</mat-form-field> 
+		</mat-dialog-content>
+	</div>	
+	<div>
+		<mat-dialog-actions align="right">
+			<button mat-raised-button type="button" (click)="dialogRef.close()" color="primary">CANCEL</button>
+			<button mat-raised-button type="submit" color="warn">UPDATE</button>
+		</mat-dialog-actions>
+	</div>	
+</form>

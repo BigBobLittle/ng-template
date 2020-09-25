@@ -1,0 +1,185 @@
+<!-- ?/********************************SHOW ALL BOOKED APPOINTMENT ON TOP OF APPOINTMENT FORM ****/ -->
+<h3 [hidden]="myAppointments">My Appointments</h3>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" class="dash-card">
+
+  <div fxFlex.gt-sm="30" fxFlex.gt-xs="50" fxFlex="100"  *ngFor="let app of myAppointments">
+    <mat-card class="primary-bg">
+      <div mat-card-widget>
+        <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+               <!-- <mat-icon>today</mat-icon> -->
+               <mat-icon>queue</mat-icon>
+            </button>
+        <div class="inline-block vertical-align-mid pad-wrap">
+          <!-- <h4 mat-card-widget-title class="mrgn-b-none">My Appointments</h4> -->
+          <h5>With: Dr. {{app.doctor}}</h5>
+          <h5>From: {{app.details.appointmentTime.from}}</h5>
+          <h5>To:  {{app.details.appointmentTime.to}}</h5>
+          <h5>Date: {{app.details.appointmentDate | date}}</h5>
+          <h5>Accepted: {{app.accepted}}</h5>
+          <h5>Completed: {{app.completed}}</h5>
+
+
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+<!--? /******************  BOOK APPOINTMENT FORM **********************************/ -->
+
+<h3>Book Appointment</h3>
+<div class="" >
+
+<form [formGroup]="formGroup" >
+
+  <mat-horizontal-stepper  formArrayName="formArray" [linear]="true" >
+     
+    <mat-step formGroupName="0" [stepControl]="formArray?.get([0])" [selectedIndex]="selectedIndex">
+      <ng-template matStepLabel>User Information</ng-template>
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+      <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+      <mat-form-field class="full-wid mrgn-b-lg">
+        <mat-label>First name</mat-label>
+        <input matInput formControlName="firstName"  name="firstName"  required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+     </div>
+     <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+      <mat-form-field class="full-wid mrgn-b-lg">
+        <mat-label>Last name</mat-label>
+        <input matInput formControlName="lastName"   name="lastName"   required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+     </div>
+
+     <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+         <mat-form-field class="full-wid mrgn-b-lg">
+           <mat-label>Age</mat-label>
+           <input matInput formControlName="age"   name="age"   required>
+           <mat-error>This field is required</mat-error>
+         </mat-form-field>
+        </div>
+
+        <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+            <mat-form-field class="full-wid mrgn-b-lg">
+              
+              <mat-select placeholder="Select Doctor" formControlName="doctor"   name="doctor" >
+                 <mat-optgroup *ngFor="let item of doctorsAndSpecialization" [label]="item.profile.doctor.specialization" >
+                 <mat-option  [value] = "item._id">
+                   Dr. {{item.profile.firstName}} {{item.profile.lastName}}
+                  </mat-option> 
+                 </mat-optgroup>
+                
+               
+                  <!-- <mat-option value="volvo">Volvo</mat-option>
+                  <mat-option value="saab">Saab</mat-option> -->
+                </mat-select>
+            </mat-form-field>
+           </div>
+
+           
+
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start">
+        <button color="primary" mat-raised-button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">
+      <ng-template matStepLabel>
+        <div>Appointment Time</div>
+      </ng-template>
+
+      
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+     
+            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+               <mat-form-field class="full-wid mrgn-b-lg ">
+                  <input formControlName="date" matInput name="date"  [matDatepicker]="datepicker" placeholder="Appointment Date" required>
+                  <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                 <mat-datepicker #datepicker></mat-datepicker>
+              
+                 </mat-form-field>
+           </div>
+         
+         
+   
+            <div fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100" fxFlex.gt-md="32">
+               <mat-form-field class="full-wid mrgn-b-lg ">
+                  <input formControlName="from" [ngxTimepicker]="picker" matInput name="from" required placeholder="From" >
+                  <ngx-material-timepicker #picker [ngxMaterialTimepickerTheme]="darkTheme"></ngx-material-timepicker>
+                 </mat-form-field>
+            </div>
+
+
+            <div fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100" fxFlex.gt-md="32">
+               <mat-form-field class="full-wid mrgn-b-lg ">
+                  <input formControlName="to" [ngxTimepicker]="picker1" matInput name="to" required placeholder="To" required >
+                  <ngx-material-timepicker #picker1 [ngxMaterialTimepickerTheme]="darkTheme"></ngx-material-timepicker>
+                 </mat-form-field>
+            </div>
+   
+            <div fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100" fxFlex.gt-md="32">
+                  <mat-form-field class="full-wid mrgn-b-lg ">
+                     <input matInput name="note" formControlName="note" required placeholder="Additional Note" required  >
+                  </mat-form-field>
+               </div>
+           
+   </div>
+          
+
+
+
+
+
+      <div fxLayout="row" fxLayoutAlign="start">
+        <button mat-button matStepperPrevious (click)="previousStep()">Back</button>
+        <button  color="primary"  (click)="nextStep()"  mat-raised-button mat-button matStepperNext>Next</button>
+      </div>
+   
+    </mat-step>
+
+    <mat-step formGroupName="2" [stepControl]="formArray?.get([2])" >
+      <!-- <ng-template matStepLabel>Payment Information</ng-template>
+       -->
+      <!-- <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+      <div fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100" fxFlex.gt-md="32">
+         <mat-form-field class="full-wid mrgn-b-lg ">
+               <mat-label>Momo name</mat-label>
+            <input matInput name="momoName" formControlName="momoName" required placeholder="Additional Note" required  >
+         </mat-form-field>
+      </div> -->
+
+      <!-- <div fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100" fxFlex.gt-md="32">
+            <mat-form-field class="full-wid mrgn-b-lg ">
+                  <mat-label>Momo Phonenumber</mat-label>
+               <input matInput name="momoPhonenumber" formControlName="momoPhonenumber" required placeholder="Additional Note" required  >
+            </mat-form-field>
+         </div>
+
+      </div> -->
+      <!-- <div>
+        <button mat-button >submit</button>
+        <button type="button" mat-button (click)="linearVerticalStepper.reset()">Reset</button>
+      </div> -->
+      <button mat-button matStepperPrevious (click)="previousStep()">Back</button>
+      <button  color="primary" type="submit" (click) ="submit()"  mat-raised-button mat-button>Submit</button>
+    </mat-step>
+  </mat-horizontal-stepper>
+
+</form>
+</div>
+
+<!--? /****************** END OF BOOK APPOINTMENT FORM **********************************/ -->
+
+                          

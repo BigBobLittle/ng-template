@@ -1,0 +1,199 @@
+<!-- <ms-outlet></ms-outlet> -->
+
+
+<div class="gene-welcome-note pad-wrap">
+    <h2>Hi {{currentUser.phone}}, Welcome back</h2>
+    <p>Explore your dashboard to keep track of all activity</p>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" class="dash-card">
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100" tourAnchor="tour-ui">
+      <mat-card class="primary-bg">
+        <div mat-card-widget>
+          <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+                 <mat-icon>remove_red_eye</mat-icon>
+              </button>
+          <div class="inline-block vertical-align-mid pad-wrap">
+            <h5 mat-card-widget-title class="mrgn-b-none">Total Visits</h5>
+            <h5>23</h5>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-card class="warn-bg">
+        <div mat-card-widget>
+          <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+                 <mat-icon>attach_money</mat-icon>
+              </button>
+          <div class="inline-block vertical-align-mid pad-wrap">
+            <h5 mat-card-widget-title class="mrgn-b-none">Appointments</h5>
+            <h5>{{totalAppointments}}</h5>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-card class="accent-bg">
+        <div mat-card-widget>
+          <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+                 <mat-icon>assessment</mat-icon>
+              </button>
+          <div class="inline-block vertical-align-mid pad-wrap">
+            <h5 mat-card-widget-title class="mrgn-b-none">Missed App.</h5>
+            <h5>0</h5>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-card class="success-bg">
+        <div mat-card-widget>
+          <button mat-mini-fab class="inline-block gene-fab-flat-icon" mat-card-icon>
+                 <mat-icon>new_releases</mat-icon>
+              </button>
+          <div class="inline-block vertical-align-mid pad-wrap">
+            <h5 mat-card-widget-title class="mrgn-b-none">Upcoming App.</h5>
+            <h5>{{upcomingAppointments}}</h5>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch">
+   
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+        <mat-card class="notification-wrap card-full-height">
+          <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxLayout="column">
+                <h4>{{'Dialy Health Advice'}}</h4>
+              </div> <span fxFlex></span>
+              <button mat-icon-button>
+                      <mat-icon>sync</mat-icon>
+                   </button>
+              <button mat-icon-button [matMenuTriggerFor]="options">
+                      <mat-icon>more_horiz</mat-icon>
+                   </button>
+            </div>
+            <mat-divider></mat-divider>
+          </div>
+          <div class="gene-card-content text-inverse-all">
+            <mat-list class="gene-theme-list mrgn-b-lg">
+              <mat-list-item class="warn-bg">
+                <div> Don't Drink Sugar Calories, rather Drink Some Water, Especially Before Meals. </div>
+              </mat-list-item>
+              <mat-list-item class="success-bg">
+                <div> Avoid Processed Junk Food (Eat Real Food Instead) and Nuts </div>
+              </mat-list-item>
+              <mat-list-item class="primary-bg">
+                <div> Get Enough Sleep and Take Care of Your Gut Health With Probiotics and Fiber </div>
+              </mat-list-item>
+            </mat-list>
+            <div class="text-center mrgn-b-md"> <button class="mrgn-all-xs meta-post" mat-button>View All Tips</button></div>
+          </div>
+        </mat-card>
+      </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="card-full-height">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Medication'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content">
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Paracetamol</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-alert">arrow_drop_up</mat-icon><span class="gene-span mrgn-l-xs">2x Dialy</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="30" class="gene-progess-md" color="primary"></mat-progress-bar>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Chloroquine phosphate</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-danger">arrow_drop_down</mat-icon><span class="gene-span mrgn-l-xs">Every 8hrs</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="20" class="gene-progess-md" color="warn"></mat-progress-bar>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Take the Coartem</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-alert">arrow_drop_up</mat-icon><span class="gene-span mrgn-l-xs">1x Dialy</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="60" class="gene-progess-md" color="accent"></mat-progress-bar>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Take enough water</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-alert">arrow_drop_up</mat-icon><span class="gene-span mrgn-l-xs">Always</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="70" class="gene-progess-md accent-bg" color="primary"></mat-progress-bar>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <p>Call the hospital</p><span fxFlex></span>
+            <div>
+              <mat-icon class="text-alert">arrow_drop_up</mat-icon><span class="gene-span mrgn-l-xs">Quickly</span></div>
+          </div>
+          <mat-progress-bar mode="determinate" value="85" class="gene-progess-md primary-bg" color="warn"></mat-progress-bar>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="notification-wrap card-full-height">
+        <div class="gene-card-title">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+              <h4>{{'Notifications'}}</h4>
+            </div> <span fxFlex></span>
+            <button mat-icon-button>
+                    <mat-icon>sync</mat-icon>
+                 </button>
+            <button mat-icon-button [matMenuTriggerFor]="options">
+                    <mat-icon>more_horiz</mat-icon>
+                 </button>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content text-inverse-all">
+          <mat-list class="gene-theme-list mrgn-b-lg">
+            <mat-list-item class="warn-bg">
+              <div> You just missed your appointment with Dr. Fred </div>
+            </mat-list-item>
+            <mat-list-item class="success-bg">
+              <div>You can reschedule your appointment. Click on edit appointment to reschedule it. </div>
+            </mat-list-item>
+            <mat-list-item class="primary-bg">
+              <div> Please review your appointment with Dr. Simon Tettey </div>
+            </mat-list-item>
+          </mat-list>
+          <div class="text-center mrgn-b-md"> <button class="mrgn-all-xs meta-post" mat-button>View All Notfications</button></div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+
+  <mat-menu #options="matMenu" x-position="before">
+    <!-- <button mat-menu-item>
+        <mat-icon>settings</mat-icon> Settings </button>
+    <button mat-menu-item>
+        <mat-icon>more</mat-icon> View More </button> -->
+    <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon> Disable notifications </button>
+    <!-- <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon> Remove Panel </button> -->
+  </mat-menu>
+
+ 

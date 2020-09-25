@@ -1,0 +1,404 @@
+  <perfect-scrollbar>
+           <div class="sidebar-container">
+              <div class="gene-user-thumb text-center">
+                 <img class="img-responsive img-circle" src="assets/img/pro-thumb.jpg" width="107" height="107" alt="user list image">
+                 <span class="gene-user-name gene-block">John Hobbs</span>
+              </div>
+              <div class="sidenav-scrollbar-container" fxLayout="column">
+                 <mat-nav-list fxLayout="column" menuToggleDirective class="navigation">
+                     
+                    <mat-list-item menuToggleLink >
+
+                       
+                      
+                          <a menuToggle class="gene-relative" mat-ripple >
+                       <mat-icon>explore</mat-icon>
+                       <span>DASHBOARD</span>
+                      
+                       <ng-container >
+                          <span class="sidebar-label">Item.Label</span>
+                       </ng-container>
+                       </a>
+
+                       
+                       <a menuToggle class="gene-relative" mat-ripple  >
+                       <mat-icon> menuitem.icon2 </mat-icon>
+                       <span> menuitem.name2  </span>
+                      
+                       <ng-container >
+                          <span class="sidebar-label"> Iff menuitem.label</span>
+                       </ng-container>
+                       </a>
+
+                      
+                 <a menuToggle class="gene-relative"   >
+                         <mat-icon> user </mat-icon>
+                         <span> user  </span>
+                        
+                         <ng-container >
+                            <span class="sidebar-label"> 3</span>
+                         </ng-container>
+                         <span fxFlex></span>
+                         <mat-icon class="menu-caret">chevron_right</mat-icon>
+                      </a>
+
+                      <!-- dropdown -->
+                         <!-- <button mat-icon-button [matMenuTriggerFor]="menuIcon" aria-label="Open basic menu">
+                            <mat-icon>more_vert</mat-icon>
+                         </button>
+
+                         <mat-menu #menuIcon="matMenu">
+                               <button mat-menu-item >
+                                item.text 1
+                               </button>
+                               <button mat-menu-item >
+                                     item.text 2
+                                    </button>
+
+                                    <button mat-menu-item >
+                                        item.text 3
+                                       </button>
+                            </mat-menu> -->
+
+                       <a menuToggle class="gene-relative"   [matMenuTriggerFor]="menuIcon">
+                         <mat-icon> menuitem.icon </mat-icon>
+                         <span> menuitem.name  </span>
+                         <!-- <ng-container>
+                            <span class="sidebar-label"> menuitem.label</span>
+                         </ng-container> -->
+                         <span fxFlex></span>
+                         <mat-icon class="menu-caret">chevron_right</mat-icon>
+                      </a>
+
+                      
+                      <mat-nav-list class="sub-menu" >
+                       <mat-menu #menuIcon="matMenu">
+                         <mat-list-item  routerLinkActive="open">
+                            <a [routerLink]="['/' ]" routerLinkActive="active-link" class="gene-relative" >
+                                childitem.name  
+                               
+                            </a>
+                         </mat-list-item>
+
+                         <mat-list-item  routerLinkActive="open">
+                               <a [routerLink]="['/' ]" routerLinkActive="active-link" class="gene-relative" >
+                                   childitem.name  
+                                  
+                               </a>
+                            </mat-list-item>
+
+                            <mat-list-item  routerLinkActive="open">
+                                  <a [routerLink]="['/' ]" routerLinkActive="active-link" class="gene-relative" >
+                                      childitem.name  
+                                     
+                                  </a>
+                               </mat-list-item>
+                            </mat-menu>
+                      </mat-nav-list>
+                   
+                      
+
+                      
+                      <!-- end dropdown -->
+                      
+
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                       <!-- <a (click)="addMenuItem()">
+                          <mat-icon>add</mat-icon>
+                          <span>{{'Add' }}</span>
+                       </a> -->
+                    </mat-list-item>
+                 </mat-nav-list>
+              </div>
+           </div>
+        </perfect-scrollbar>
+
+
+            <!-- <a menuToggle class="gene-relative" mat-ripple *ngIf="menuitem.type === 'button'" routerLinkActive="active-link" (click)="changeLayout()">
+                     <mat-icon>{{ menuitem.icon }}</mat-icon>
+                     <span>{{ menuitem.name  }}</span>
+                     <ng-container *ngIf="menuitem.label">
+                        <span class="sidebar-label">{{ menuitem.label}}</span>
+                     </ng-container>
+                     </a> -->
+
+                     <!-- <a menuToggle class="gene-relative" mat-ripple [routerLink]="['/', menuitem.state]" routerLinkActive="active-link" *ngIf="menuitem.type === 'link'">
+                     <mat-icon>{{ menuitem.icon }}</mat-icon>
+                     <span>{{ menuitem.name  }}</span>
+                     <ng-container *ngIf="menuitem.label">
+                        <span class="sidebar-label">{{ menuitem.label}}</span>
+                     </ng-container>
+                     </a> -->
+                   
+<!-- 
+                     <a menuToggle class="gene-relative" mat-ripple href="javascript:;" *ngIf="menuitem.type === 'sub'">
+                        <mat-icon>{{ menuitem.icon }}</mat-icon>
+                        <span>{{ menuitem.name  }}</span>
+                        <ng-container *ngIf="menuitem.label">
+                           <span class="sidebar-label">{{ menuitem.label}}</span>
+                        </ng-container>
+                        <span fxFlex></span>
+                        <mat-icon class="menu-caret">chevron_right</mat-icon>
+                     </a> -->
+                     <!-- <mat-nav-list class="sub-menu" *ngIf="menuitem.type === 'sub'">
+                        <mat-list-item *ngFor="let childitem of menuitem.children" routerLinkActive="open">
+                           <a [routerLink]="['/', menuitem.state, childitem.state ]" routerLinkActive="active-link" class="gene-relative" mat-ripple>
+                              {{ childitem.name  }}
+                              <ng-container *ngIf="childitem.label">
+                                 <span class="sidebar-label">{{childitem.label}}</span>
+                              </ng-container>
+                           </a>
+                        </mat-list-item>
+                     </mat-nav-list> -->
+
+
+
+
+                      MENUITEMS = [
+   {
+    state: 'horizontal',
+    name: 'TOP MENU',
+    type: 'button',
+    icon: 'horizontal_split',
+    label: 'New'
+  },
+  {
+    state: 'dashboard',
+    name: 'DASHBOARD',
+    type: 'sub',
+    icon: 'explore',
+    children: [
+      {state: 'saas', name: 'SAAS'},
+      {state: 'web-analytics', name: 'WEB ANALYTICS'},
+    ]
+  },
+  {
+    state: 'courses',
+    name: 'COURSES',
+    type: 'sub',
+    icon: 'book',
+    label:'New',
+    children: [
+      {state: 'courses', name: 'COURSES'},
+      {state: 'courses-list', name: 'COURSES LIST'},
+      {state: 'course-detail', name: 'COURSE DETAIL'},
+      {state: 'signin', name: 'SIGN IN'},
+      {state: 'payment', name: 'PAYMENT'} 
+    ]
+  },
+  {
+    state: 'ecommerce',
+    name: 'E-COMMERCE',
+    type: 'sub',
+    icon: 'explore',
+    label:'New',
+    children: [
+      {state: 'shop', name: 'SHOP'},
+      {state: 'cart', name: 'CART'},
+      {state: 'checkout', name: 'CHECKOUT'},
+      {state: 'cards', name: 'CARDS'},
+      {state: 'invoice', name: 'INVOICE'},
+    ]
+  },
+  {
+    state: 'pages',
+    name: 'PAGES',
+    type: 'sub',
+    icon: 'import_contacts',
+    label : 'New',
+    children: [
+      {state: 'media', name: 'GALLERY'},
+      {state: 'mediaV2', name: 'GALLERY V2',label : 'New'},
+      {state: 'pricing', name: 'PRICING'},
+      {state: 'pricing-1', name: 'PRICING V2',label : 'New'},
+      {state: 'blank', name: 'BLANK'},
+      {state: 'timeline', name: 'TIMELINE',label : 'New'},
+      {state: 'faq', name: 'FAQ',label : 'New'},
+      {state: 'feedback', name: 'FEEDBACK',label : 'New'},
+      {state: 'about', name: 'ABOUT',label : 'New'},
+      {state: 'contact', name: 'CONTACT',label : 'New'},
+      {state: 'search', name: 'SEARCH',label : 'New'},
+      {state: 'comingsoon', name: 'COMING SOON',label : 'New'},
+      {state: 'maintenance', name: 'MAINTENANCE',label : 'New'},
+    ]
+  },
+  {
+    state: 'user-management',
+    name: 'MANAGEMENT',
+    type: 'sub',
+    icon: 'view_list',
+    label : 'New',
+    children: [
+      {state: 'usermanagelist', name: 'USER LIST'},
+      {state: 'usergridlist', name: 'USER GRID'}
+    ]
+  },
+  
+  {
+    state: 'users',
+    name: 'USERS',
+    type: 'sub',
+    icon: 'web',
+    label : 'New',
+    children: [
+      {state: 'userlist', name: 'USER LIST'},
+      {state: 'userprofile', name: 'USER PROFILE'},
+      {state: 'userprofilev2', name: 'USER PROFILE V2',label: 'New'}
+    ]
+  },
+
+  {
+    state: 'session',
+    name: 'SESSIONS',
+    type: 'sub',
+    icon: 'face',
+    label : 'New',
+    children: [
+      {state: 'login', name: 'LOGIN'},
+      {state: 'loginV2', name: 'LOGIN V2',label: 'New'},
+      {state: 'register', name: 'REGISTER'},
+      {state: 'registerV2', name: 'REGISTER V2',label: 'New'},
+      {state: 'forgot-password', name: 'FORGOT'},
+      {state: 'forgot-passwordV2', name: 'FORGOT V2',label: 'New'},
+      {state: 'lockscreen', name: 'LOCKSCREEN'},
+      {state: 'lockscreenV2', name: 'LOCKSCREEN V2',label: 'New'}
+    ]
+  },
+  {
+    state: 'video-player',
+    name: 'VIDEO PLAYER',
+    type: 'link',
+    icon: 'videocam',
+    label: 'New'
+  },
+  {
+    state: 'taskboard',
+    name: 'TASK BOARD',
+    type: 'link',
+    icon: 'drag_indicator',
+    label: 'New'
+  },
+  {
+    state: 'inbox',
+    name: 'INBOX',
+    type: 'link',
+    icon: 'mail'
+  },
+  {
+    state: 'chat',
+    name: 'CHAT',
+    type: 'link',
+    icon: 'chat'
+  },
+  {
+    state: 'calendar',
+    name: 'CALENDAR',
+    type: 'link',
+    icon: 'date_range'
+  },
+
+  {
+    state: 'editor',
+    name: 'EDITOR',
+    type: 'sub',
+    icon: 'format_shapes',
+    children: [
+      {state: 'wysiwyg', name: 'WYSIWYG EDITOR'},
+      {state: 'ckeditor', name: 'CKEDITOR'},
+    ]
+  },
+  {
+    state: 'icons',
+    name: 'MATERIAL ICONS',
+    type: 'link',
+    icon: 'grade'
+  },
+  {
+    state: 'chart',
+    name: 'CHARTS',
+    type: 'sub',
+    icon: 'show_chart',
+    children: [
+      {state: 'ng2-charts', name: 'NG2 CHARTS'},
+      {state: 'easy-pie-chart', name: 'EASY PIE'},
+    ]
+  },
+  {
+    state: 'components',
+    name: 'COMPONENTS',
+    type: 'sub',
+    icon: 'layers',
+    children: [
+      {state: 'buttons', name: 'BUTTONS'},
+      {state: 'cards', name: 'CARDS'},
+      {state: 'grid', name: 'GRID'},
+      {state: 'list', name: 'LIST'},
+      {state: 'menu', name: 'MENU'},
+      {state: 'slider', name: 'SLIDER'},
+      {state: 'snackbar', name: 'SNACKBAR'},
+      {state: 'tooltip', name: 'TOOLTIP'},
+      {state: 'dialog', name: 'DIALOG'},
+      {state: 'select', name: 'SELECT'},
+      {state: 'input', name: 'INPUT'},
+      {state: 'checkbox', name: 'CHECKBOX'},
+      {state: 'radio', name: 'RADIO'},
+      {state: 'toolbar', name: 'TOOLBAR'},
+      {state: 'progress', name: 'PROGRESS'},
+      {state: 'tabs', name: 'TABS'},
+      {state: 'colorpicker', name: 'COLORPICKER'},
+      {state: 'datepicker', name: 'DATEPICKER'},
+    ]
+  },
+  {
+    state: 'dragndrop',
+    name: 'DRAG & DROP',
+    type: 'sub',
+    icon: 'mouse',
+    children: [
+      {state: 'dragula', name: 'DRAGULA'},
+      {state: 'sortable', name: 'SORTABLEJS'}
+    ]
+  },
+  {
+    state: 'tables',
+    name: 'TABLES',
+    type: 'sub',
+    icon: 'format_line_spacing',
+    children: [
+      {state: 'fullscreen', name: 'FULLSCREEN'},
+      {state: 'selection', name: 'SELECTION'},
+      {state: 'pinning', name: 'PINNING'},
+      {state: 'sorting', name: 'SORTING'},
+      {state: 'paging', name: 'PAGING'},
+      {state: 'editing', name: 'EDITING'},
+      {state: 'filter', name: 'FILTER'},
+      {state: 'responsive', name: 'RESPONSIVE'}
+    ]
+  },
+  {
+    state: 'forms',
+    name: 'FORMS',
+    type: 'sub',
+    icon: 'insert_comment',
+    children: [
+      {state: 'form-wizard', name: 'FORM WIZARD'},
+      {state: 'form-validation', name: 'FORM VALIDATION'},
+      {state: 'form-upload', name: 'UPLOAD'},
+      {state: 'form-tree', name: 'TREE'}
+    ]
+  },
+  {
+    state: 'maps',
+    name: 'MAPS',
+    type: 'sub',
+    icon: 'map',
+    children: [
+      {state: 'googlemap', name: 'GOOGLE MAP'},
+      {state: 'leafletmap', name: 'LEAFLET MAP'}
+    ]
+  },
+
+
+];
